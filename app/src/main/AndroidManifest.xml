@@ -3,20 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.app.donateclaim">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_headerlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_headerlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.DonateClaim"
         tools:targetApi="31">
-
-
         <activity
-            android:name=".ui.splash.SpleshActivity"
+            android:name=".Ui.myProductUploads.view.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.home.view.ProductClaimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.myProductUploads.view.UploadPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.splesh.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +36,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            android:name=".Ui.main.MainActivity"
+            android:exported="false" />
 
-        </activity>
-
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.app.donateclaim.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepath" />
+        </provider>
     </application>
 
 </manifest>

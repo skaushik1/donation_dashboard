@@ -2,15 +2,61 @@
     <!-- Base application theme. -->
     <style name="Theme.DonateClaim" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/iconColor</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/grey</item>
+        <item name="colorSecondaryVariant">@color/grey</item>
+        <item name="colorOnSecondary">@color/grey</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--Red Button style-->
+    <style name="blueButtonStyle">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:background">@drawable/blue_button_drawable</item>
+
+    </style>
+
+
+    <style name="TextStyleBNV">
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:padding">0dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!--Edit text style-->
+    <style name="editTextStyle">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="background">@drawable/edittext_line</item>
+
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
+
+
+
+
+    <style name="MyThemeOverlayFilledPadding">
+        <item name="editTextStyle">@style/MyTextInputEditText_filledBox_padding</item>
+    </style>
+
+    <style name="MyTextInputEditText_filledBox_padding" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <!-- left and right padding -->
+        <item name="android:paddingLeft">@dimen/_2sdp</item>
+        <item name="android:paddingRight">@dimen/_2sdp</item>
+
+        <!-- top and bottom padding -->
+        <item name="android:paddingTop">@dimen/_25sdp</item>
+    </style>
+
 </resources>

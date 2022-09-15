@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Ui.myProductUploads.view.ProductDetailsFragment">
+
+    <TextView
+        android:id="@+id/tv_productDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Details"
+        android:textColor="@color/textgrey"
+        android:fontFamily="@font/raleway_regular"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_productDetails"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Submit"
+     >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_product"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_190sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_Products_Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_190sdp"
+                    android:clipToPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="@dimen/_150sdp"
+                    app:ci_drawable="@drawable/ic_tutorial_tab_selected"
+                    app:ci_drawable_unselected="@drawable/ic_tutorial_tab_unselected"
+                    app:layout_constraintStart_toStartOf="@+id/cv_product"
+                    app:layout_constraintTop_toBottomOf="@id/cv_product" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Audi Sport 1000 Q2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintTop_toBottomOf="@id/cv_product" />
+
+
+            <TextView
+                android:id="@+id/tv_descrptionProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_medium"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_10ssp"
+                android:text="Loren Lipsum is simply dummy text of the printing and typetesting industry. standerd dummy text ever."
+                android:textColor="@color/textgrey"
+                app:layout_constraintEnd_toEndOf="@+id/tv_productName"
+                app:layout_constraintStart_toStartOf="@+id/tv_productName"
+                app:layout_constraintTop_toBottomOf="@id/tv_productName">
+
+            </TextView>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="#DEDEDE"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_descrptionProduct"
+                android:layout_width="match_parent"
+                android:background="@drawable/edittext_line"
+                android:layout_height="@dimen/_1sdp"/>
+
+
+            <TextView
+                android:id="@+id/tv_Information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="People who claimed"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="@+id/tv_descrptionProduct"
+                app:layout_constraintTop_toBottomOf="@id/view4" />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_Information">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Submit"
+        style="@style/blueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:text="Disable this Post"
+        android:padding="@dimen/_12sdp"
+        android:textAllCaps="false"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
