@@ -2,7 +2,9 @@ package com.app.donateclaim.Ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
+import com.app.donateclaim.BaseActivity
 import com.app.donateclaim.R
 import com.app.donateclaim.Ui.home.view.HomeFragment
 import com.app.donateclaim.Ui.myProductUploads.view.MyUplodesFragment
@@ -10,7 +12,7 @@ import com.app.donateclaim.databinding.ActivityMainBinding
 import com.app.ekapic.ui.viewpager.ViewPagerAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +72,10 @@ class MainActivity : AppCompatActivity() {
         }
         false
 
+    }
+
+    fun somting(data: String) {
+        Toast.makeText(this, data, Toast.LENGTH_SHORT).show()
     }
 
 

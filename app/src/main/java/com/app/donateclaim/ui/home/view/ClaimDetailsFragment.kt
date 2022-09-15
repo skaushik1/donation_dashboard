@@ -11,8 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.app.donateclaim.Ui.home.AdapterClass.TutorialViewModel
 import com.app.donateclaim.Ui.home.AdapterClass.TutorialViewPagerAdapter
+import com.app.donateclaim.Ui.home.viewmodel.GetProductListViewModelClass
+import com.app.donateclaim.Ui.home.viewmodel.ProductDetailsViewModel
 import com.app.donateclaim.databinding.FragmentClaimDetailsBinding
 import com.app.donateclaim.helper.BaseViewModelFactory
+import com.app.donateclaim.model.MediaItem
 import java.util.ArrayList
 
 
@@ -23,8 +26,10 @@ class ClaimDetailsFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private lateinit var tutorialList: ArrayList<Int>
+
+    private lateinit var tutorialList: ArrayList<MediaItem>
     lateinit var tutorialViewModel: TutorialViewModel
+    lateinit var ProductDetailsViewModel:ProductDetailsViewModel
 
 
     override fun onCreateView(
@@ -42,6 +47,23 @@ class ClaimDetailsFragment : Fragment() {
         initView()
 
 
+        ProductDetailsViewModel = ViewModelProvider(
+            this,
+            BaseViewModelFactory { ProductDetailsViewModel() })[ProductDetailsViewModel::class.java]
+
+
+
+
+        val bundle = arguments
+        val title = bundle!!.getString("title")
+        val descrption= bundle.getString("descrption")
+        val productId=bundle.getString("productId")
+        binding.tvProductName.text=title
+        binding.tvDescrptionProduct.text=descrption
+        ProductDetailsViewModel.ProductDetails(productId!!,"1")
+
+
+
     }
 
     /**
@@ -56,11 +78,8 @@ class ClaimDetailsFragment : Fragment() {
             )
 
 
-        tutorialList = tutorialViewModel.getTutorialList()
-        val tutorialViewPagerAdapter = TutorialViewPagerAdapter(
-            tutorialList
-        )
-
+        //tutorialList = tutorialViewModel.getTutorialList()
+        val tutorialViewPagerAdapter = TutorialViewPagerAdapter(tutorialList)
         binding.vpTutorial.adapter = tutorialViewPagerAdapter
 
         //Attach viewPager with indicator

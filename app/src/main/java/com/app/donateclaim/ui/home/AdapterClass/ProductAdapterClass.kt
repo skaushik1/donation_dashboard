@@ -6,29 +6,38 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.donateclaim.model.feedmodel
 import com.app.donateclaim.databinding.CustomproductBinding
+import com.app.donateclaim.model.ProductsItem
 import com.bumptech.glide.Glide
 
 
 class ProductAdapterClass (var ctx: Context) :
     RecyclerView.Adapter<ProductAdapterClass.MyViewHolder>() {
 
-    var feedmodel: MutableList<feedmodel> = mutableListOf()
-    var itemClick: (Int, feedmodel) -> Unit = { position, arrayList -> }
+    var products: MutableList<ProductsItem> = mutableListOf()
+    var itemClick: (Int, ProductsItem) -> Unit = { position, arrayList -> }
 
     class MyViewHolder(var binding: CustomproductBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {
         var iv_product = binding.ivProduct
-        fun bind(data: feedmodel) {
+        var title=binding.tvTitle
+        var descrptions=binding.tvDescrption
+        fun bind(data: ProductsItem) {
             //user priofile
+
+            title.text=data.title
+            descrptions.text=data.description
+
+          var productUrl=  "http://44.228.249.93/Donate/WS/Uploads/upload_feed/"
+
             Glide.with(itemView.context)
-                .load(data.Url)
+                .load(productUrl+data.mediaName)
                 .into(iv_product)
         }
     }
 
-    fun updateProduct(feedPost: ArrayList<feedmodel>) {
-        this.feedmodel = feedPost
+    fun updateProduct(product: ArrayList<ProductsItem>) {
+        this.products = product
         notifyDataSetChanged()
     }
 
@@ -43,14 +52,14 @@ class ProductAdapterClass (var ctx: Context) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(feedmodel.get(position))
+        holder.bind(products.get(position))
 
         holder.binding.ivProduct.setOnClickListener {
-            itemClick.invoke(position, feedmodel[position])
+            itemClick.invoke(position, products[position])
         }
     }
 
     override fun getItemCount(): Int {
-        return feedmodel.size
+        return products.size
     }
 }
