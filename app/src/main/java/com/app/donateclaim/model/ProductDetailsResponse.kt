@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class ProductDetailsResponse(
 
 	@field:SerializedName("Claimed_Product")
-	val claimedProduct: List<ClaimedProductItem?>? = null,
+	val claimedProduct: List<ClaimedProductItem> = listOf(),
 
 	@field:SerializedName("Media")
 	val media: List<MediaItem> = listOf(),

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.donateclaim.R
 import com.app.donateclaim.model.feedmodel
 import com.app.donateclaim.databinding.CustomproductBinding
 import com.app.donateclaim.model.ProductsItem
@@ -32,6 +33,7 @@ class ProductAdapterClass (var ctx: Context) :
 
             Glide.with(itemView.context)
                 .load(productUrl+data.mediaName)
+                .placeholder(R.drawable.ic_addimg)
                 .into(iv_product)
         }
     }

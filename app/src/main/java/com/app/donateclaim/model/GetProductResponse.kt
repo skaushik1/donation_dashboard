@@ -26,7 +26,7 @@ data class ProductsItem(
 	val description: String? = null,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	val id: String? = null,
 
 	@field:SerializedName("media_name")
 	val mediaName: String? = null,

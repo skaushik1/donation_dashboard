@@ -38,7 +38,7 @@ abstract class BaseActivity : AppCompatActivity() {
         adjustFontScale(resources.configuration)
         mcontext = this
         localPref = PrefData(this)
-        //progressUtil = ProgressUtil(this)
+        progressUtil = ProgressUtil(this)
         initializeLoader()
     }
 

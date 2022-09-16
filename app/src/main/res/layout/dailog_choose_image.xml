@@ -7,6 +7,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
@@ -25,19 +27,77 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
-        >
+            android:layout_gravity="center">
 
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_Gallery"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCamera"
+                app:layout_constraintVertical_bias="0.396">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/iv_Gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_gallery"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_camera"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_camera"
+                app:layout_constraintTop_toTopOf="@+id/iv_camera">
+
+            </ImageView>
+
+
+            <TextView
+                android:id="@+id/tv_Camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Camera"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/raleway_bold"
+                app:layout_constraintEnd_toEndOf="@+id/iv_camera"
+                app:layout_constraintStart_toStartOf="@+id/iv_camera"
+                app:layout_constraintTop_toBottomOf="@+id/iv_camera">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/tv_Gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Gallery"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/iv_Gallery"
+                app:layout_constraintStart_toStartOf="@+id/iv_Gallery"
+                app:layout_constraintTop_toBottomOf="@+id/iv_Gallery">
+
+            </TextView>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCamera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:background="@drawable/blue_button_drawable"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/_50sdp"
                 android:text="Camera"
                 android:textAllCaps="false"
-                android:background="@drawable/blue_button_drawable"
-                android:layout_marginTop="@dimen/_28sdp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,12 +108,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_20sdp"
+
                 android:layout_marginTop="32dp"
                 android:background="@drawable/blue_button_drawable"
                 android:paddingHorizontal="@dimen/_50sdp"
                 android:text="Gallery"
                 android:textAllCaps="false"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btnCamera"
 

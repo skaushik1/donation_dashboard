@@ -38,7 +38,7 @@ class HomeFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        (activity as MainActivity).somting("Fragment")
+        (activity as MainActivity)
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
         //return inflater.inflate(R.layout.fragment_home, container, false)
@@ -66,7 +66,8 @@ class HomeFragment : BaseFragment() {
             itemClick = { index, model ->
                 val mainIntent = Intent(requireContext(), ProductClaimActivity::class.java)
                 mainIntent.putExtra("title",model.title)
-                mainIntent.putExtra("productId",model.id)
+                mainIntent.putExtra("productId",model.id.toString())
+                Log.d("productId", model.id.toString())
                 mainIntent.putExtra("descrption", model.description)
                 startActivity(mainIntent)
             }
@@ -83,10 +84,11 @@ class HomeFragment : BaseFragment() {
             if (it.data!!.products!!.isNotEmpty()) {
                 //categoryItem.clear()
                 productsItem.addAll(it.data.products)
-                //binding.tvNoDataFound.visibility = View.GONE
+                binding.tvNoDataFound.visibility = View.GONE
                 productAdapterClass!!.updateProduct(productsItem)
 
             } else {
+                binding.tvNoDataFound.visibility = View.VISIBLE
                 Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
             }
@@ -105,15 +107,5 @@ class HomeFragment : BaseFragment() {
     private fun callGetAllPostApi() {
       getProductListViewModelClass.getAllProduct(userId!!,"0")
     }
-
-//    private fun setpost() {
-//        feed.add(feedmodel(R.drawable.car_new_3))
-//        feed.add(feedmodel(R.drawable.car_new_2))
-//        feed.add(feedmodel(R.drawable.care_new))
-//
-//        productAdapterClass!!.updateProduct(feed)
-//
-//    }
-
 
 }

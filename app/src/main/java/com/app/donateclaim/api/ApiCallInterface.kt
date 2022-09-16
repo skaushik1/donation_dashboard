@@ -22,6 +22,7 @@ interface ApiCallInterface {
     ): Single<RegisterDevicesResponse>
 
 
+
     @POST(WebConstant.GetProductList)
     fun getProductList(
         @Body requestData: JsonObject
@@ -33,20 +34,30 @@ interface ApiCallInterface {
         @Body requestData: JsonObject
     ): Single<ProductDetailsResponse>
 
-//    @Multipart
-//    @POST(WebConstant.Register)
-//    fun register(
-//        @Part("firstName") firstName: RequestBody,
-//        @Part("lastName") lastName: RequestBody,
-//        @Part("email") email: RequestBody,
-//        @Part("password") password: RequestBody,
-//        @Part("role") role: RequestBody,
-//        @Part("deviceType") deviceType: RequestBody,
-//        @Part("deviceToken") deviceToken: RequestBody,
-//        @Part("gender") gender: RequestBody,
-//        @Part("phone") phone: RequestBody,
-//        @Part("countryCode") countryCode: RequestBody,
-//    ): Single<UserResponse>
+    @POST(WebConstant.claimProduct)
+    fun claimProductApi(
+        @Body requestData: JsonObject
+    ): Single<BaseResponse>
+
+    @Multipart
+    @POST(WebConstant.addProducts)
+    fun createProduct(
+        @Part("user_id") user_id: RequestBody,
+        @Part("title") title: RequestBody,
+        @Part("description") description: RequestBody,
+        @Part("quantity") quantity: RequestBody,
+        @Part("name") name: RequestBody,
+        @Part("email_id") email_id: RequestBody,
+        @Part("phone_number") phone_number: RequestBody,
+        @Part product_images: MutableList<MultipartBody.Part>,
+
+
+    ): Single<BaseResponse>
+
+    @POST(WebConstant.disableProduct)
+    fun disablePost(
+        @Body requestData: JsonObject
+    ): Single<BaseResponse>
 
 
 

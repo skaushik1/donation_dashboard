@@ -74,9 +74,9 @@ class MainActivity : BaseActivity() {
 
     }
 
-    fun somting(data: String) {
-        Toast.makeText(this, data, Toast.LENGTH_SHORT).show()
-    }
+//    fun somting(data: String) {
+//        Toast.makeText(this, data, Toast.LENGTH_SHORT).show()
+//    }
 
 
 

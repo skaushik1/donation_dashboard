@@ -65,6 +65,7 @@ class ProductImageAdapterclass(var ctx: Context) :
             Glide.with(context)
                 .load(packageDelivery[position])
                 .into(holder.binding.setImageImageview)
+
         }
 
     }

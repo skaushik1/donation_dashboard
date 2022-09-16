@@ -38,7 +38,7 @@
             android:name=".Ui.home.view.ProductClaimActivity"
             android:exported="false" />
         <activity
-            android:name=".Ui.myProductUploads.view.UploadPostActivity"
+            android:name=".Ui.myProductUploads.view.UploadProductActivity"
             android:exported="false" />
         <activity
             android:name=".Ui.main.MainActivity"

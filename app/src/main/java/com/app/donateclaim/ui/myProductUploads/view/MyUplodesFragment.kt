@@ -3,7 +3,6 @@ package com.app.donateclaim.Ui.myProductUploads.view
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,9 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.donateclaim.BaseFragment
-import com.app.donateclaim.R
 import com.app.donateclaim.Ui.home.AdapterClass.ProductAdapterClass
 import com.app.donateclaim.Ui.home.viewmodel.GetProductListViewModelClass
-import com.app.donateclaim.model.feedmodel
+import com.app.donateclaim.Ui.main.MainActivity
 import com.app.donateclaim.databinding.FragmentMyUplodesBinding
 import com.app.donateclaim.helper.BaseViewModelFactory
 import com.app.donateclaim.model.ProductsItem
@@ -38,6 +36,7 @@ class MyUplodesFragment : BaseFragment() {
     ): View? {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_my_uplodes, container, false)
+        (activity as MainActivity)
         binding = FragmentMyUplodesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -46,6 +45,12 @@ class MyUplodesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        productsItem.clear()
+        callUploadProductApi()
     }
 
     private fun initView() {
@@ -64,6 +69,9 @@ class MyUplodesFragment : BaseFragment() {
         productAdapterClass = ProductAdapterClass(requireContext()).apply {
             itemClick = { index, model ->
                 val mainIntent = Intent(requireContext(), ProductDetailActivity::class.java)
+                mainIntent.putExtra("title",model.title)
+                mainIntent.putExtra("productId",model.id.toString())
+                mainIntent.putExtra("descrption", model.description)
                 startActivity(mainIntent)
             }
         }
@@ -104,18 +112,12 @@ class MyUplodesFragment : BaseFragment() {
 
     private fun setOnClick() {
       binding.ivAdd.setOnClickListener {
-          val mainIntent = Intent(requireContext(), UploadPostActivity::class.java)
+          val mainIntent = Intent(requireContext(), UploadProductActivity::class.java)
           startActivity(mainIntent)
       }
     }
 
-//    private fun setpost() {
-//        feed.add(feedmodel(R.drawable.car_new_3))
-//        feed.add(feedmodel(R.drawable.care_new))
-//
-//        productAdapterClass!!.updateProduct(feed)
-//
-//    }
+
 
 
 }

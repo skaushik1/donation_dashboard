@@ -51,19 +51,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_210sdp"
                     android:clipToPadding="false"
+                    android:background="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <me.relex.circleindicator.CircleIndicator
-                    android:id="@+id/indicator"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="@dimen/_170sdp"
-                    app:ci_drawable="@drawable/ic_tutorial_tab_selected"
-                    app:ci_drawable_unselected="@drawable/ic_tutorial_tab_unselected"
-                    app:layout_constraintStart_toStartOf="@+id/cv_product"
-                    app:layout_constraintTop_toBottomOf="@id/cv_product" />
+                <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                    android:id="@+id/spring_dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dampingRatio="0.5"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_86sdp"
+                    app:dotsColor="@color/white"
+                    app:dotsStrokeColor="@color/white"
+                    app:dotsCornerRadius="@dimen/_50sdp"
+                    app:dotsSize="@dimen/_8ssp"
+                    app:dotsSpacing="2dp"
+                    app:dotsStrokeWidth="2dp"
+                    app:stiffness="300" />
 
             </androidx.cardview.widget.CardView>
 

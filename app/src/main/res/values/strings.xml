@@ -4,4 +4,29 @@
     <string name="cancel">Cancel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Input validation error message-->
+    <string name="msg_invalid_email_empty">Please enter your email</string>
+    <string name="msg_invalid_email">Email Id is not Valid.</string>
+    <string name="msg_valid_password">Please enter valid password.</string>
+    <string name="msg_password_length">Password must have minimum length of 6 characters/numbers without space.</string>
+    <string name="msg_invalid_input">Value is required.</string>
+    <string name="msg_invalid_phone_number">Please enter valid phone number</string>
+    <string name="msg_invalid_postal_code">Please enter valid postal code</string>
+    <string name="msg_invalid_user_name">Please enter your first name</string>
+    <string name="msg_invalid_last_name">Please enter your last name</string>
+    <string name="please_Enter_Gender">Please Enter your gender</string>
+    <string name="msg_invalid_otp">Please enter valid OTP</string>
+    <string name="msg_old_new_password_match">Old Password and New password must not be same</string>
+    <string name="msg_confirm_password_mismatch">New password and Confirm password must be same</string>
+    <string name="msg_no_internet">No connectivity. Please check internet connection.</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="error_select_speed">Select the playback speed which you want to apply to the video</string>
+
 </resources>

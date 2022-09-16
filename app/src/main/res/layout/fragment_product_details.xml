@@ -61,11 +61,34 @@
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/_150sdp"
                     app:ci_drawable="@drawable/ic_tutorial_tab_selected"
                     app:ci_drawable_unselected="@drawable/ic_tutorial_tab_unselected"
                     app:layout_constraintStart_toStartOf="@+id/cv_product"
                     app:layout_constraintTop_toBottomOf="@id/cv_product" />
+
+
+
+
+
+                <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                    android:id="@+id/spring_dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dampingRatio="0.5"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_80sdp"
+                    app:dotsColor="@color/white"
+                    app:dotsStrokeColor="@color/white"
+                    app:dotsCornerRadius="@dimen/_50sdp"
+                    app:dotsSize="@dimen/_8ssp"
+                    app:dotsSpacing="2dp"
+                    app:dotsStrokeWidth="2dp"
+                    app:stiffness="300" />
+
+
+
 
             </androidx.cardview.widget.CardView>
 
@@ -125,15 +148,30 @@
                 app:layout_constraintTop_toBottomOf="@id/view4" />
 
 
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_claim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintTop_toBottomOf="@id/tv_Information">
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <TextView
+                android:id="@+id/tv_noDataFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="108dp"
+                android:fontFamily="@font/raleway_medium"
+                android:text="No Claim User Found"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rv_claim"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Information">
+
+            </TextView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,7 +189,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_Submit"
+        android:id="@+id/btn_Disable_Post"
         style="@style/blueButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

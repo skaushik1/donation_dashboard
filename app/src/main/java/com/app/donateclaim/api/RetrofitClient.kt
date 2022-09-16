@@ -48,6 +48,9 @@ object RetrofitClient {
 
         val networkConnectionInterceptor = NetworkConnectionInterceptor(context)
 
+
+
+
 /*
         val manager = context.packageManager
         val info = manager.getPackageInfo(context.packageName, PackageManager.GET_ACTIVITIES)

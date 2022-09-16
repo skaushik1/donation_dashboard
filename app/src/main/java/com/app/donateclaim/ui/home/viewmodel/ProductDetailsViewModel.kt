@@ -14,11 +14,11 @@ class ProductDetailsViewModel : BaseViewModel() {
     var ProductDetailsResponse: MutableLiveData<ProductDetailsResponse> = MutableLiveData()
 
     /**
-     * This method is used to call GetProduct Api
+     * This method is used to call GetProductDetails Api
      */
     fun ProductDetails(
         Id: String,
-        type:String
+        type:Int
     ) {
         //Api call for get ServicesType and CarTypes
         apiInterface.productDetails(
@@ -42,7 +42,8 @@ class ProductDetailsViewModel : BaseViewModel() {
                         ProductDetailsResponse(
                             message = getAllProductResponse.message,
                             status = getAllProductResponse.status,
-                            media = getAllProductResponse.media
+                            media = getAllProductResponse.media,
+                            claimedProduct = getAllProductResponse.claimedProduct
                             //loadMore = getAllNotificationResponse.loadMore
                         )
                     )
