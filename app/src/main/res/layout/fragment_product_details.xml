@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:text="Product Details"
         android:textColor="@color/textgrey"
-        android:fontFamily="@font/raleway_regular"
+        android:fontFamily="@font/raleway_bold"
         android:textSize="@dimen/_12ssp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:visibility="visible"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

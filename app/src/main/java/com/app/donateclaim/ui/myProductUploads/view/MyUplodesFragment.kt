@@ -91,7 +91,7 @@ class MyUplodesFragment : BaseFragment() {
                 productAdapterClass!!.updateProduct(productsItem)
             } else {
                 binding.tvNoDataFound.visibility = View.VISIBLE
-                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
             }
 
@@ -100,8 +100,10 @@ class MyUplodesFragment : BaseFragment() {
         getProductListViewModelClass.isLoading.observe(baseActivity) { isLoading ->
             if (isLoading) {
                 baseActivity.showProgress(requireContext())
+                binding.tvNoDataFound.visibility = View.GONE
             } else {
                 baseActivity.hideProgress()
+                binding.tvNoDataFound.visibility = View.VISIBLE
             }
         }
     }

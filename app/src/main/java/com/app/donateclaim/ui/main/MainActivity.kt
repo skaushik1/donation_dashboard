@@ -30,6 +30,10 @@ class MainActivity : BaseActivity() {
             viewPagerAdapter.addFragment(HomeFragment(), "")
             viewPagerAdapter.addFragment(MyUplodesFragment(), "")
 
+
+
+
+
             binding.viewpager.adapter = viewPagerAdapter
             binding.viewpager.currentItem = 0
             binding.viewpager.offscreenPageLimit = 2

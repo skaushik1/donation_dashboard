@@ -62,6 +62,8 @@ class HomeFragment : BaseFragment() {
         Log.d("userId", userId!!)
 
 
+
+
         productAdapterClass = ProductAdapterClass(requireContext()).apply {
             itemClick = { index, model ->
                 val mainIntent = Intent(requireContext(), ProductClaimActivity::class.java)
@@ -81,15 +83,17 @@ class HomeFragment : BaseFragment() {
 
     private fun setObserver() {
         getProductListViewModelClass.getAllProductResponse.observe(baseActivity, Observer { it ->
-            if (it.data!!.products!!.isNotEmpty()) {
+            Log.e("callthis","---");
+
+            if (it.data?.products?.isNotEmpty() == true) {
                 //categoryItem.clear()
                 productsItem.addAll(it.data.products)
                 binding.tvNoDataFound.visibility = View.GONE
                 productAdapterClass!!.updateProduct(productsItem)
-
             } else {
                 binding.tvNoDataFound.visibility = View.VISIBLE
-                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+
+                //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
             }
 
@@ -97,9 +101,11 @@ class HomeFragment : BaseFragment() {
 
         getProductListViewModelClass.isLoading.observe(baseActivity) { isLoading ->
             if (isLoading) {
+                binding.tvNoDataFound.visibility = View.GONE
                 baseActivity.showProgress(requireContext())
             } else {
                 baseActivity.hideProgress()
+                binding.tvNoDataFound.visibility = View.VISIBLE
             }
         }
     }

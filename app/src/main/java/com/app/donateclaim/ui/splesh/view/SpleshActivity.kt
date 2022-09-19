@@ -45,6 +45,7 @@ class SpleshActivity : BaseActivity() {
 
     private fun initView() {
         registerDeviceId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+        Log.d("deviceId", registerDeviceId.toString())
         callRegisterDeviceApi()
         setObservers()
     }

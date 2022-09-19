@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_bold"
-        android:text="No Product Found"
+        android:text="No Products Found"
         android:textSize="@dimen/_14ssp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
