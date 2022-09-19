@@ -26,6 +26,7 @@
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_5sdp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Submit"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -42,6 +43,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -51,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_210sdp"
                     android:clipToPadding="false"
-                    android:background="@color/black"
+                    android:background="@drawable/placeholder"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +83,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:fontFamily="@font/raleway_bold"
-                android:text="Audi Sport 1000 Q2"
+                android:text="@string/audi_sport_1000_q2"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintTop_toBottomOf="@id/cv_product" />
@@ -122,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Fill below Your Information to claim"
+                android:text="@string/fill_below_your_information_to_claim"
                 android:fontFamily="@font/raleway_bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11ssp"
@@ -136,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:text="Full Name"
+                android:text="@string/full_name"
                 android:fontFamily="@font/raleway_regular"
                 android:textColor="@color/textgrey"
                 android:textSize="@dimen/_10ssp"
@@ -182,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_9sdp"
-                android:text="Email"
+                android:text="@string/email"
                 android:fontFamily="@font/raleway_regular"
                 android:textColor="@color/textgrey"
                 android:textSize="@dimen/_10ssp"
@@ -228,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:fontFamily="@font/raleway_regular"
-                android:text="Phone No"
+                android:text="@string/phone_no"
                 android:textColor="@color/textgrey"
                 android:textSize="@dimen/_10ssp"
                 android:visibility="visible"
@@ -294,7 +296,7 @@
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_35sdp"
         android:layout_marginBottom="@dimen/_15sdp"
-        android:text="Submit"
+        android:text="@string/submit"
         android:padding="@dimen/_12sdp"
         android:textAllCaps="false"
         android:visibility="visible"

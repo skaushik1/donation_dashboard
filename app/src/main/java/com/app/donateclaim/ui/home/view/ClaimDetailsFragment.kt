@@ -2,6 +2,7 @@ package com.app.donateclaim.Ui.home.view
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ import java.util.ArrayList
 
 class ClaimDetailsFragment : BaseFragment() {
     private var _binding: FragmentClaimDetailsBinding? = null
+    private val emailPattern = Patterns.EMAIL_ADDRESS
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -92,11 +94,70 @@ class ClaimDetailsFragment : BaseFragment() {
     }
 
     private fun callClaimProdctApi() {
-       val userId= localPref.getStringPrefs(PrefData.UserId).toString()
-        claimProductViewModelClass.claimProductApi(userId, product_id = productId!!.toInt().toString(),
-            binding.etFullName.text.toString(), binding.etEmail.text.toString(), binding.etPhoneNo.text.toString()
-        )
+        if (isValidData(
+                name = binding.etFullName.text.toString(),
+                email = binding.etEmail.text.toString(),
+                phoneNo = binding.etPhoneNo.text.toString(),
 
+            )
+        ) {
+
+            val name = binding.etFullName.text.toString()
+            val email=binding.etEmail.text.toString()
+            val phone=binding.etPhoneNo.text.toString()
+
+            val userId= localPref.getStringPrefs(PrefData.UserId).toString()
+            claimProductViewModelClass.claimProductApi(userId, product_id = productId!!.toInt().toString(),
+               name, email, phone
+            )
+        }
+
+    }
+
+    private fun isValidData(name: String, email: String, phoneNo: String): Boolean {
+        val validUserName: Boolean
+        var validEmail: Boolean
+        val validPhoneNo: Boolean
+
+        if (name.isEmpty()) {
+            binding.etFullName.error = "Enter Your Full Name"
+            validUserName = false
+        } else {
+            validUserName = true
+        }
+
+        if (email.isEmpty()) {
+            binding.etEmail.error = "Enter Your Email"
+            validEmail = false
+        } else {
+            validEmail = emailPattern.matcher(email).matches()
+            if (!validEmail) {
+                binding.etEmail.error ="Email is not valid"
+            } else {
+                validEmail = true
+            }
+        }
+
+        if (phoneNo.isEmpty()) {
+            binding.etPhoneNo.error = "Enter Your PhoneNo"
+            validPhoneNo = false
+        } else {
+            validPhoneNo = true
+        }
+
+        if (validUserName) {
+            binding.etFullName.error = null
+        }
+
+        if (validEmail) {
+            binding.etEmail.error = null
+        }
+
+        if (validPhoneNo) {
+            binding.etPhoneNo.error = null
+        }
+
+        return  validUserName && validEmail && validPhoneNo
     }
 
     private fun setObserver() {

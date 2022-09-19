@@ -6,6 +6,7 @@ import android.app.Dialog
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -16,13 +17,13 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.util.Base64.encodeToString
 import android.util.Log
 import android.util.Patterns
 import android.view.*
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
-import androidx.core.net.toFile
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,11 +37,9 @@ import com.app.donateclaim.helper.BaseViewModelFactory
 import com.app.donateclaim.helper.permissions.MarshMallowPermission
 import com.app.donateclaim.helper.permissions.getWidth
 import com.app.donateclaim.rxjava.PrefData
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStream
+import java.io.*
 import java.util.*
+import java.util.zip.Deflater
 
 
 class UploadProductActivity : BaseActivity() {
@@ -143,7 +142,7 @@ private fun isValidData(title: String, description: String, quantity: String,nam
 
 
     if (name.isEmpty()) {
-        binding.etFullName.error = "Enter Your name"
+        binding.etFullName.error = "Enter Your Full Name"
         validUserName = false
     } else {
         validUserName = true
@@ -369,9 +368,9 @@ private fun initview() {
     super.onActivityResult(requestCode, resultCode, data)
     if (requestCode == 100) {
         if (resultCode == RESULT_OK) {
+            compressimage(packageItemUrl)
             productImage.addAll(mutableListOf(packageItemUrl))
             productImageAdapterclass.setData(productImage)
-
         } else {
             // Result was a failure
             Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show()
@@ -405,7 +404,27 @@ private fun initview() {
 
 }
 
-private fun getPathFromURI(imageUri: Uri) {
+
+
+
+    fun compressimage(filePath: String?) {
+        val compressionRatio = 2 //1 == originalImage, 2 = 50% compression, 4=25% compress
+        val file = File(filePath.toString())
+        try {
+            var bitmap = BitmapFactory.decodeFile(file.path)
+            bitmap.compress(CompressFormat.JPEG, compressionRatio, FileOutputStream(file))
+            //bitmap = Bitmap.createScaledBitmap(bitmap, 160, 160, true);
+        } catch (t: Throwable) {
+            Log.e("ERROR", "Error compressing file.$t")
+            t.printStackTrace()
+        }
+    }
+
+
+
+
+
+    private fun getPathFromURI(imageUri: Uri) {
     val path: String = imageUri.path!! // uri = any content Uri
 
     val databaseUri: Uri
@@ -436,11 +455,10 @@ private fun getPathFromURI(imageUri: Uri) {
             val columnIndex = cursor.getColumnIndex(projection[0])
             packageItemUrl = cursor.getString(columnIndex)
             Log.e("path", packageItemUrl);
-            //val compressedImageFile = Compressor.compress(baseContext, File(packageItemUrl))
-
-
             productImage.add(packageItemUrl)
-
+            compressimage(packageItemUrl)
+            Log.d("totalsize", productImage.size.toString())
+            //compressimage(packageItemUrl)
         }
         cursor.close()
     } catch (e: Exception) {

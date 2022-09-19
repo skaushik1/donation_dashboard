@@ -70,7 +70,7 @@
                     android:layout_marginBottom="@dimen/_3sdp"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:fontFamily="@font/raleway_medium"
-                    android:text="Loren Lipsum is simply dummy text of the printing and typetesting industry. standerd dummy text ever."
+                    android:text="@string/loren_lipsum_is_simply_dummy_text_of_the_printing_and_typetesting_industry_standerd_dummy_text_ever"
                     android:layout_marginTop="@dimen/_5sdp"
                     app:layout_constraintStart_toStartOf="@+id/tv_title"
                     app:layout_constraintTop_toBottomOf="@id/tv_title">

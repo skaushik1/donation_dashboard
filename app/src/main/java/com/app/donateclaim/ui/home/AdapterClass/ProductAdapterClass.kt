@@ -33,7 +33,7 @@ class ProductAdapterClass (var ctx: Context) :
 
             Glide.with(itemView.context)
                 .load(productUrl+data.mediaName)
-                .placeholder(R.drawable.ic_addimg)
+                .placeholder(R.drawable.placeholder)
                 .into(iv_product)
         }
     }

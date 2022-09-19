@@ -64,7 +64,7 @@ class ProductDetailsAdapter(private var productDetails: MutableList<MediaItem>, 
         var productUrl=  "http://44.228.249.93/Donate/WS/Uploads/upload_feed/"
         Glide.with(container.context)
             .load(productUrl+ productDetails[position].mediaName)
-            .placeholder(R.drawable.ic_addimg)
+            .placeholder(R.drawable.placeholder)
             .into(binding.ivProducts)
 
         container.addView(
