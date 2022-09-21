@@ -1,4 +1,4 @@
-package com.app.donateclaim.rxjava
+package com.app.donateclaim.helper
 
 import android.content.Context
 import com.google.gson.Gson

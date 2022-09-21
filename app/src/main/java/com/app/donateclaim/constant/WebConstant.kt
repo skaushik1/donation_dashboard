@@ -13,21 +13,6 @@ class WebConstant {
         const val SERVER_BASE_URL = "http://44.228.249.93/"
         private const val API_URL = SERVER_BASE_URL + "Donate/WS/Service.php?Service="
 
-        const val PROFILE_PIC_LOAD_URL =
-            "http://clientapp.narola.online/pg/taxibooking/api/Uploads/Users/" //todo change with live url
-
-        const val TERMS_CONDITION_URL =
-            "https://www.clickdimensions.com/links/TestPDFfile.pdf" //todo change with live url
-        const val PRIVACY_POLICY_URL =
-            "https://www.clickdimensions.com/links/TestPDFfile.pdf" //todo change with live url
-
-
-        const val VEHICLE_TYPE_LOAD_URL =
-            "http://clientapp.narola.online/pg/taxibooking/api/Uploads/VehicleType/" //todo change with live url
-
-
-        const val PACKAGE_PHOTO_URl =
-            "http://clientapp.narola.online/pg/taxibooking/api/Uploads/PackageDelivery/" //todo change with live url
 
 
         //API
@@ -84,9 +69,6 @@ class WebConstant {
             const val EmailId = "email_id"
             const val PhoneNumber = "phone_number"
             const val is_disable = "is_disable"
-
-
-
 
         }
     }

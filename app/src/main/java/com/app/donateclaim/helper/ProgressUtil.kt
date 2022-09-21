@@ -1,9 +1,10 @@
-package com.app.donateclaim
+package com.app.donateclaim.helper
 
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.view.Gravity
+import com.app.donateclaim.R
 
 
 class ProgressUtil : Dialog {

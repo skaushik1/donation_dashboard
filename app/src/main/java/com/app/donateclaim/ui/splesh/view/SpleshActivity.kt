@@ -1,20 +1,19 @@
 package com.app.donateclaim.Ui.splesh.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.app.donateclaim.BaseActivity
+import com.app.donateclaim.base.BaseActivity
 import com.app.donateclaim.R
 import com.app.donateclaim.Ui.main.MainActivity
 import com.app.donateclaim.Ui.splesh.viewmodel.RegisterUserViewModelClass
 import com.app.donateclaim.databinding.ActivitySpleshBinding
-import com.app.donateclaim.helper.BaseViewModelFactory
-import com.app.donateclaim.rxjava.PrefData
+import com.app.donateclaim.base.BaseViewModelFactory
+import com.app.donateclaim.helper.PrefData
 
 class SpleshActivity : BaseActivity() {
 
@@ -32,15 +31,7 @@ class SpleshActivity : BaseActivity() {
             BaseViewModelFactory { RegisterUserViewModelClass() })[RegisterUserViewModelClass::class.java]
 
         initView()
-//        Handler().postDelayed(Runnable {
-//
-//            val mainIntent = Intent(this, MainActivity::class.java)
-//            this.startActivity(mainIntent)
-//            this.finish()
-//        }, 1000)
 
-//
-//        Log.d("deviceId", id)
     }
 
     private fun initView() {
@@ -55,10 +46,13 @@ class SpleshActivity : BaseActivity() {
         registerViewModel.registerDevicesViewModel.observe(this) { it ->
             if (it.status == "1") {
                 localPref.setStringPrefs(PrefData.UserId, it.userId.toString())
-                val mainIntent = Intent(this, MainActivity::class.java)
-                mainIntent.putExtra("userId",it.userId)
-                this.startActivity(mainIntent)
-                this.finish()
+                Handler().postDelayed(Runnable {
+                    val mainIntent = Intent(this, MainActivity::class.java)
+                    mainIntent.putExtra("userId",it.userId)
+                    this.startActivity(mainIntent)
+                    this.finish()
+                }, 1000)
+
             } else {
                 Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
             }

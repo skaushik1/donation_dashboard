@@ -11,18 +11,15 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
-import com.app.donateclaim.BaseFragment
-import com.app.donateclaim.Ui.home.AdapterClass.ProductAdapterClass
+import com.app.donateclaim.base.BaseFragment
 import com.app.donateclaim.Ui.home.AdapterClass.TutorialViewModel
 import com.app.donateclaim.Ui.home.AdapterClass.ProductDetailsAdapter
 import com.app.donateclaim.Ui.home.viewmodel.ClaimProductViewModelClass
 import com.app.donateclaim.Ui.home.viewmodel.ProductDetailsViewModel
-import com.app.donateclaim.Ui.main.MainActivity
 import com.app.donateclaim.databinding.FragmentClaimDetailsBinding
-import com.app.donateclaim.helper.BaseViewModelFactory
+import com.app.donateclaim.base.BaseViewModelFactory
 import com.app.donateclaim.model.MediaItem
-import com.app.donateclaim.model.ProductsItem
-import com.app.donateclaim.rxjava.PrefData
+import com.app.donateclaim.helper.PrefData
 import java.util.ArrayList
 
 

@@ -1,10 +1,8 @@
 package com.app.donateclaim.Ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
-import com.app.donateclaim.BaseActivity
+import com.app.donateclaim.base.BaseActivity
 import com.app.donateclaim.R
 import com.app.donateclaim.Ui.home.view.HomeFragment
 import com.app.donateclaim.Ui.myProductUploads.view.MyUplodesFragment

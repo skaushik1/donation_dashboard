@@ -6,7 +6,6 @@ import android.app.Dialog
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -17,7 +16,6 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
-import android.util.Base64.encodeToString
 import android.util.Log
 import android.util.Patterns
 import android.view.*
@@ -27,19 +25,18 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.app.donateclaim.BaseActivity
+import com.app.donateclaim.base.BaseActivity
 import com.app.donateclaim.R
 import com.app.donateclaim.Ui.myProductUploads.adapter.ProductImageAdapterclass
 import com.app.donateclaim.Ui.myProductUploads.viewmodel.ProductUploadViewModel
 import com.app.donateclaim.databinding.ActivityUploadPostBinding
 import com.app.donateclaim.databinding.DailogChooseImageBinding
-import com.app.donateclaim.helper.BaseViewModelFactory
+import com.app.donateclaim.base.BaseViewModelFactory
 import com.app.donateclaim.helper.permissions.MarshMallowPermission
 import com.app.donateclaim.helper.permissions.getWidth
-import com.app.donateclaim.rxjava.PrefData
+import com.app.donateclaim.helper.PrefData
 import java.io.*
 import java.util.*
-import java.util.zip.Deflater
 
 
 class UploadProductActivity : BaseActivity() {

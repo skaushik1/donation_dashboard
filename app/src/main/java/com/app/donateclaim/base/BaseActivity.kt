@@ -1,4 +1,4 @@
-package com.app.donateclaim
+package com.app.donateclaim.base
 
 import android.app.*
 import android.content.Context
@@ -9,8 +9,9 @@ import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.app.donateclaim.helper.ProgressUtil
 import com.app.donateclaim.R
-import com.app.donateclaim.rxjava.PrefData
+import com.app.donateclaim.helper.PrefData
 
 
 import io.reactivex.disposables.CompositeDisposable

@@ -1,4 +1,4 @@
-package com.app.donateclaim.helper
+package com.app.donateclaim.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

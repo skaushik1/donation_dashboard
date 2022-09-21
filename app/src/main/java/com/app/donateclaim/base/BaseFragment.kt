@@ -1,4 +1,4 @@
-package com.app.donateclaim
+package com.app.donateclaim.base
 
 import android.app.Activity
 import android.content.Context
@@ -8,7 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import androidx.fragment.app.Fragment
-import com.app.donateclaim.rxjava.PrefData
+import com.app.donateclaim.helper.PrefData
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

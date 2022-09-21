@@ -1,10 +1,7 @@
 package com.app.donateclaim.Ui.myProductUploads.view
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,17 +10,14 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
-import com.app.donateclaim.BaseFragment
-import com.app.donateclaim.Ui.home.AdapterClass.ProductAdapterClass
+import com.app.donateclaim.base.BaseFragment
 import com.app.donateclaim.Ui.home.AdapterClass.TutorialViewModel
 import com.app.donateclaim.Ui.home.AdapterClass.ProductDetailsAdapter
-import com.app.donateclaim.Ui.home.view.ProductClaimActivity
-import com.app.donateclaim.Ui.home.viewmodel.ClaimProductViewModelClass
 import com.app.donateclaim.Ui.home.viewmodel.ProductDetailsViewModel
 import com.app.donateclaim.Ui.myProductUploads.adapter.ClaimProductUserAdapter
 import com.app.donateclaim.Ui.myProductUploads.viewmodel.DisabalPostViewmodel
 import com.app.donateclaim.databinding.FragmentProductDetailsBinding
-import com.app.donateclaim.helper.BaseViewModelFactory
+import com.app.donateclaim.base.BaseViewModelFactory
 import com.app.donateclaim.model.ClaimedProductItem
 import com.app.donateclaim.model.MediaItem
 import java.util.ArrayList

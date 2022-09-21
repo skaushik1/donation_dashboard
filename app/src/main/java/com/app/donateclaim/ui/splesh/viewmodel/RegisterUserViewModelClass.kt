@@ -1,7 +1,7 @@
 package com.app.donateclaim.Ui.splesh.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.app.donateclaim.BaseViewModel
+import com.app.donateclaim.base.BaseViewModel
 import com.app.donateclaim.constant.WebConstant
 import com.app.donateclaim.model.BaseResponse
 import com.app.donateclaim.model.RegisterDevicesResponse

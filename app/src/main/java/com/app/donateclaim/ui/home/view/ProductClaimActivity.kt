@@ -1,12 +1,10 @@
 package com.app.donateclaim.Ui.home.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.app.donateclaim.BaseActivity
+import com.app.donateclaim.base.BaseActivity
 import com.app.donateclaim.R
-import com.app.donateclaim.Ui.home.view.ClaimDetailsFragment
 import com.app.donateclaim.databinding.ActivityProductClaimBinding
 
 class ProductClaimActivity : BaseActivity(){

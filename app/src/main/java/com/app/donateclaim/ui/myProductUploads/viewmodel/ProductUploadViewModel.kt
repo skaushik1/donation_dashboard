@@ -2,7 +2,7 @@ package com.app.donateclaim.Ui.myProductUploads.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.app.donateclaim.BaseViewModel
+import com.app.donateclaim.base.BaseViewModel
 import com.app.donateclaim.constant.AppConstant
 import com.app.donateclaim.model.BaseResponse
 import com.taxibookingapp.base.rxjava.autoDispose

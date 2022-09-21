@@ -1,4 +1,4 @@
-package com.app .donateclaim
+package com.app.donateclaim
 
 import android.content.Context
 import android.util.Log
