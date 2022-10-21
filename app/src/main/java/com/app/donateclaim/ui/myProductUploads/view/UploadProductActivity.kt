@@ -71,7 +71,7 @@ class UploadProductActivity : BaseActivity() {
     }
 
     private fun uploadProductApi() {
-        if (isValidData(
+        if (!isValidData(
                 title = binding.etTitle.text.toString(),
                 description = binding.etDescription.text.toString(),
                 quantity = binding.etQuantity.text.toString(),
@@ -82,10 +82,13 @@ class UploadProductActivity : BaseActivity() {
             )
         ) {
 
-            if (productImage.isEmpty()) {
-                Toast.makeText(this, "Please Select Your image", Toast.LENGTH_SHORT).show()
-            }
-
+        }
+        else if(productImage.isEmpty())
+        {
+            Toast.makeText(this, "Please Select Your image", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
             val title = binding.etTitle.text.toString()
             val description = binding.etDescription.text.toString()
             val quantity = binding.etQuantity.text.toString()
