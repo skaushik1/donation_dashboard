@@ -16,7 +16,6 @@ import com.app.donateclaim.databinding.FragmentMyUplodesBinding
 import com.app.donateclaim.base.BaseViewModelFactory
 import com.app.donateclaim.model.ProductsItem
 import com.app.donateclaim.helper.PrefData
-import java.util.ArrayList
 
 class MyUplodesFragment : BaseFragment() {
 
@@ -48,7 +47,7 @@ class MyUplodesFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        productsItem.clear()
+//        productsItem.clear()
         callUploadProductApi()
     }
 
@@ -83,16 +82,22 @@ class MyUplodesFragment : BaseFragment() {
 
     private fun setObserver() {
         getProductListViewModelClass.getAllProductResponse.observe(baseActivity, Observer { it ->
-            if (it.data?.products?.isNotEmpty() == true) {
-                //categoryItem.clear()
-                productsItem.addAll(it.data!!.products)
-                binding.tvNoDataFound.visibility = View.GONE
-                productAdapterClass!!.updateProduct(productsItem)
-            } else {
-                binding.tvNoDataFound.visibility = View.VISIBLE
-                //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+            if (it!=null) {
+                if (it.data?.products?.isNotEmpty() == true) {
+                    //categoryItem.clear()
+                    productsItem = ArrayList(it.data.products)
+                    binding.tvNoDataFound.visibility = View.GONE
+                    productAdapterClass!!.updateProduct(productsItem)
+                } else {
+                    binding.tvNoDataFound.visibility = View.VISIBLE
+                    productsItem = ArrayList()
+                    productAdapterClass!!.updateProduct(productsItem)
+                    //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
+                }
+                getProductListViewModelClass.getAllProductResponse.postValue(null)
             }
+
 
         })
 

@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "1065193509515",
-    "project_id": "donate-claim",
-    "storage_bucket": "donate-claim.appspot.com"
+    "project_number": "987598096723",
+    "project_id": "donate-claim-2cfad",
+    "storage_bucket": "donate-claim-2cfad.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1065193509515:android:fc9285e77dbcf23eaafa8e",
+        "mobilesdk_app_id": "1:987598096723:android:055352cf073478804279a6",
         "android_client_info": {
           "package_name": "com.app.donateclaim"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1065193509515-me0tgf7b65ehvpl33ot31lt2g4ou7dc4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.app.donateclaim",
-            "certificate_hash": "b94f378ba883ccd1ed32b3165c388ee2cc8a43f8"
-          }
-        },
-        {
-          "client_id": "1065193509515-hm18o2dtqc0n4hugbn4joeoc18coq7f0.apps.googleusercontent.com",
+          "client_id": "987598096723-t64cu5v4vggnaleikf2tffuk4lk0gv4a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAkGE-Jnfzkkzv2WrsVegiqpZ_GbJ70QP8"
+          "current_key": "AIzaSyBhuZQocm9R3XpFZ0Jg_MysLn3eH3U2XD0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1065193509515-hm18o2dtqc0n4hugbn4joeoc18coq7f0.apps.googleusercontent.com",
+              "client_id": "987598096723-t64cu5v4vggnaleikf2tffuk4lk0gv4a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

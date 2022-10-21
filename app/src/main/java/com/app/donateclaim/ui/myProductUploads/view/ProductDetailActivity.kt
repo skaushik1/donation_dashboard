@@ -36,9 +36,5 @@ class ProductDetailActivity : BaseActivity() {
         fragment.arguments= bundle
         transaction.replace(R.id.fm_productDetails, fragment)
         transaction.commit()
-
-
-
-
     }
 }

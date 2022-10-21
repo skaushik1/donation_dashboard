@@ -64,6 +64,7 @@ class ProductImageAdapterclass(var ctx: Context) :
             holder.binding.setImageImageview.isClickable = false
             Glide.with(context)
                 .load(packageDelivery[position])
+                .placeholder(R.drawable.placeholder)
                 .into(holder.binding.setImageImageview)
 
         }
