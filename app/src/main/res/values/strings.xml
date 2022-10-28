@@ -62,9 +62,9 @@
     <string name="acb_gmail_com">acb@gmail.com</string>
     <string name="loren_lipsum_is_simply_dummy_text_of_the_printing_and_typetesting_industry_standerd_dummy_text_ever">Loren Lipsum is simply dummy text of the printing and typetesting industry. standerd dummy text ever.</string>
     <string name="audi_sport_1000_q2">Audi Sport 1000 Q2</string>
-    <string name="fill_below_your_information_to_claim">Fill below Your Information to claim</string>
+    <string name="fill_below_your_information_to_claim">Fill below your information to claim</string>
     <string name="people_who_claimed">People who claimed</string>
-
+    <string name="no_claims_from_users">No Claims from Users</string>
 
 
 </resources>

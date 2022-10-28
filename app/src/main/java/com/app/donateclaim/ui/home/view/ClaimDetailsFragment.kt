@@ -2,6 +2,7 @@ package com.app.donateclaim.Ui.home.view
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -104,6 +105,7 @@ class ClaimDetailsFragment : BaseFragment() {
             val phone=binding.etPhoneNo.text.toString()
 
             val userId= localPref.getStringPrefs(PrefData.UserId).toString()
+//            Log.d("Claim produect ID",userId)
             claimProductViewModelClass.claimProductApi(userId, product_id = productId!!.toInt().toString(),
                name, email, phone
             )

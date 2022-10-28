@@ -26,6 +26,7 @@ class ClaimProductViewModelClass: BaseViewModel() {
         phone_number:String,
     ) {
         //Api call for registerDevices
+
         apiInterface.claimProductApi(
             requestData = WebConstant.ApiRequestData.claimProductRequestBody(
                 user_id = userId,

@@ -65,6 +65,7 @@ class WebConstant {
             const val userId = "user_id"
             const val type = "type"
             const val id = "id"
+            const val product_id = "product_id"
             const val name = "name"
             const val EmailId = "email_id"
             const val PhoneNumber = "phone_number"
@@ -145,17 +146,13 @@ class WebConstant {
         ): JsonObject {
             val jsonObject = JsonObject()
             jsonObject.addProperty(RequestParams.userId, user_id)
-            jsonObject.addProperty(RequestParams.id, product_id)
+            jsonObject.addProperty(RequestParams.product_id, product_id)
             jsonObject.addProperty(RequestParams.name, name)
             jsonObject.addProperty(RequestParams.EmailId, email_id)
             jsonObject.addProperty(RequestParams.PhoneNumber, phone_number)
 
             return jsonObject
         }
-
-
-
-
     }
 }
 

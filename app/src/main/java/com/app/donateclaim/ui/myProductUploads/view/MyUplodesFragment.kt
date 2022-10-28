@@ -122,8 +122,4 @@ class MyUplodesFragment : BaseFragment() {
           startActivity(mainIntent)
       }
     }
-
-
-
-
 }

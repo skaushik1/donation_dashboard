@@ -17,7 +17,6 @@ import com.app.donateclaim.databinding.FragmentHomeBinding
 import com.app.donateclaim.base.BaseViewModelFactory
 import com.app.donateclaim.model.ProductsItem
 import com.app.donateclaim.helper.PrefData
-import java.util.ArrayList
 
 
 class HomeFragment : BaseFragment() {
@@ -76,23 +75,26 @@ class HomeFragment : BaseFragment() {
         binding.rvProduct.adapter = productAdapterClass
         //setpost()
         callGetAllPostApi()
+        binding.swipeLayout.setOnRefreshListener {
+            if (binding.swipeLayout.isRefreshing) {
+                callGetAllPostApi()
+            }
+        }
         setObserver()
-
     }
 
     private fun setObserver() {
         getProductListViewModelClass.getAllProductResponse.observe(baseActivity, Observer { it ->
             Log.e("callthis","---");
-
             if (it.data?.products?.isNotEmpty() == true) {
-                //categoryItem.clear()
+                productsItem.clear()
                 productsItem.addAll(it.data.products)
                 binding.tvNoDataFound.visibility = View.GONE
                 productAdapterClass!!.updateProduct(productsItem)
             } else {
                 binding.tvNoDataFound.visibility = View.VISIBLE
                 //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-
+                productAdapterClass!!.updateProduct(ArrayList())
             }
 
         })
@@ -100,11 +102,19 @@ class HomeFragment : BaseFragment() {
         getProductListViewModelClass.isLoading.observe(baseActivity) { isLoading ->
             if (isLoading) {
                 binding.tvNoDataFound.visibility = View.GONE
+                checkRefereshing()
                 baseActivity.showProgress(requireContext())
             } else {
                 baseActivity.hideProgress()
                 binding.tvNoDataFound.visibility = View.VISIBLE
             }
+        }
+    }
+
+    private fun checkRefereshing() {
+        if (binding.swipeLayout.isRefreshing)
+        {
+            binding.swipeLayout.isRefreshing = false
         }
     }
 
